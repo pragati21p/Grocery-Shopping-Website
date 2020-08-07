@@ -4,8 +4,11 @@ from .models import Product
 
 # Create your views here.
 def index(request):
+    return render(request, 'home.html')
+
+def shop(request):
     products = Product.objects.all()
-    return render(request, 'index.html', {'products': products})
+    return render(request, 'shop.html', {'products': products})
 
 def newpage(request):
     return HttpResponse("This is demo page.")
